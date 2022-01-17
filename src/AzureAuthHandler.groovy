@@ -112,7 +112,7 @@ class AzureAuthHandler {
 
 
         /**
-         *
+         * Sends the refresh token to AAD to get a new set of tokens with an extended expiry time. Will clear auth if it fails.
          */
         private void refreshTokens() {
             def _body = this.body
@@ -121,12 +121,7 @@ class AzureAuthHandler {
             def authResponse = RestClient.post(authUrl + 'token', queryMap, headerMap, _body)
             if (authResponse.responseCode == 200) {
                 this.authToken = authResponse.responseBody["access_token"]
-                println('New Auth token: ')
-                println(authToken)
                 this.refreshToken = authResponse.responseBody["refresh_token"]
-
-                println('New refresh token: ')
-                println(this.refreshToken)
             } else {
                 clearAuth()
             }
