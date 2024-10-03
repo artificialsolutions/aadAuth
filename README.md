@@ -1,5 +1,9 @@
 # Azure Active Directory Authentication Handler
 
+> [!IMPORTANT]
+> This project has been retired and archived
+> If there is a need of continued use / development of this project for your own needs please feel free to fork the project - which will remain here in archived form.
+
 ## Purpose
 This connector is meant to handle the authentication tokens for the Azure Active Directory. 
 With it, users can log in and authorize access to back-end processes so that data can be retrieved and used.
